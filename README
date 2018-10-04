@@ -1,0 +1,46 @@
+CMSC 479/679 - Robotics
+Team TEAM - TEAM Excels in Automating Mazes
+William Gao, Mark Murnane, Dominic Rollo, Wyatt Schwitzer
+
+Quickstart:
+Install raspbian for robots onto your GoPiGo3, and connect the distance sensor to I2C1, and the servomotor to Servo1.
+You'll also need to pip3 install scipy, and pysmbus or smbus-cffi.
+
+Then, as root:
+  python3 ./tremaux_maze.py
+
+This should begin driving the robot around the maze. If this fails, you likely need to calibrate your robot by
+adjusting the settings in the top of movement.py. For details on how to set these values, please see our full 
+project writeup. 
+
+The following files are here:
+
+calibrate.py - Utilities for calibrating the GoPiGo3 both before and during the maze solve
+
+forward.py - A simple test tool that drives straight forward for 5 meters
+
+movement.py - Our custom movement library, as well as the distance sensor functions
+
+tremaux_maze.py - Uses our tools to try and reliably solve a maze
+
+servo.py - A simple test tool that aids in servomotor calibration
+
+square.py - A simple test tool that drives the robot around our reference 1 meter square
+
+turn.py - A simple test tool that commands the robot to turn a given angle
+
+imu.py - A library we wrote to pull down IMU data
+
+lidar.json - A sample of the lidar data
+
+lidar.py - A library we wrote for pulling down the lidar data
+
+localization.py - A rough attempt at SLAM using the lidar
+
+main.py - A reimplementation of tremaux_maze.py using SLAM and the lidar
+
+read_imu.py - A sample script that tests out the IMU
+
+read_lidar.py - A sample script that tests out the lidar
+
+
